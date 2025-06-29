@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Users & Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .user-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .user-card h3 {
+            margin-top: 0;
+        }
+
+        .task-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .no-tasks {
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>All Users & Tasks</h1>
+
+    <a href="/add-user">Add User</a>
+    <a href="/add-task">Add Task</a>
+    <a href="/export">Export to Excel</a>
+
+    {{#each users}}
+    <div class="user-card">
+        <h3>{{this.name}} ({{this.email}}, {{this.mobile}})</h3>
+
+        {{#if this.tasks.length}}
+        <ul class="task-list">
+            {{#each this.tasks}}
+            <li>{{this.task_name}} - {{this.task_type}}</li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <p class="no-tasks">No tasks assigned.</p>
+        {{/if}}
+    </div>
+    {{/each}}
+
+</body>
+
+</html>
