@@ -49,8 +49,8 @@ GET /tasks/:userId → Returns all tasks related to a particular user in JSON fo
 ## How to Run This Project Locally
 Step 1: Clone the Repo
 
-git clone https://github.com/your-username/HackerKernel-Task.git
-cd HackerKernel-Task
+git clone https://github.com/your-username/file_name
+cd [file_name]
 
 Step 2: Install Dependencies
 npm install
@@ -62,8 +62,8 @@ CREATE DATABASE node_task_app;
 Step 4: Setup Environment Variables
 Create a .env file in the root directory:
 DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=root
+DB_USER=****
+DB_PASSWORD=****
 DB_NAME=node_task_app
 
 Step 5: Run Migrations (to create tables) or can create manually also.
